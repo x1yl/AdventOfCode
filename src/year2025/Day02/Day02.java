@@ -2,12 +2,14 @@ package year2025.Day02;
 
 import aoc.AocService;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Day02 {
     public static void main(String[] args) throws Exception {
-        String session = java.nio.file.Files.readString(java.nio.file.Path.of("src/AocSession")).trim();
+        String session = Files.readString(Path.of("src/AocSession")).trim();
         AocService service = new AocService(session);
 
         int year = 2025;

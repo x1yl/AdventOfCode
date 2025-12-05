@@ -1,6 +1,6 @@
-# Advent of Code - Java Solutions
+# Advent of Code — Java Solutions
 
-My solutions to all completed Advent of Code Days. Includes a Java-based framework for solving Advent of Code puzzles with automated input fetching, answer submission, and local caching. NOTE: The framework in this repo is ***SOURCE AVALIABLE ONLY***. If you are interested in adapting or using the framework please create a pull request.
+My solutions to all completed Advent of Code Days. Includes a Java-based framework for solving Advent of Code puzzles with automated input fetching, answer submission, and local caching.
 
 ## Features
 
@@ -63,6 +63,13 @@ src/
     - Go to Application/Storage → Cookies
     - Copy the value of the `session` cookie
 
+3. **Add your user agent**
+
+    Create a file `src/UserAgent` containing your project and contact:
+    ```bash
+    echo "github.com/username/project by email" > src/UserAgent
+    ```
+
 ## Usage
 
 ### Generate Templates for Today's Puzzle
@@ -87,14 +94,14 @@ cd src
 javac year2025/Day01/*.java aoc/*.java
 java year2025.Day01.Day01
 ```
-Or from your IDE, just run the `DayXX.java` file directly.
+Or from your IDE, run the `DayXX.java` file directly.
 
 ## How It Works
 
 1. **Input Fetching**: On first run, `AocService` downloads your puzzle input via `AocClient` and caches it locally in `AocStorage`
 2. **Solving**: Your solution code in `DayXXPartY.solve()` processes the input and returns the answer as a string
 3. **Submission**: `AocService.submit()` sends your answer to AoC, respecting the 5-minute rate limit
-4. **Tracking**: All attempts are logged in `day.json` with timestamps, and bounds checking warns you if your answer is outside known ranges
+4. **Tracking**: All attempts are logged in `day.json` with timestamps, and bound checking warns you if your answer is outside known ranges
 
 ## Solution Template
 
@@ -141,6 +148,6 @@ Feel free to fork and adapt this framework for your own use! If you find bugs or
 
 ## License
 
-This project is open source. Use it however you like for your Advent of Code journey! 🎄
+This project is licensed under the [MIT LICENSE](LICENSE).
 
 ---

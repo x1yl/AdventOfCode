@@ -5,13 +5,13 @@ import java.util.ArrayList;
 import static year2025.Day04.utils.countNeighbors;
 
 public class Day04Part1 {
-    public static int solve(ArrayList<String> fileData) {
+    public static int solve(ArrayList<String> input) {
         int accessiblePaper = 0;
 
-        for (int i = 0; i < fileData.size(); i++) {
-            String current = fileData.get(i);
-            String previous = i > 0 ? fileData.get(i - 1) : null;
-            String next = i < fileData.size() - 1 ? fileData.get(i + 1) : null;
+        for (int i = 0; i < input.size(); i++) {
+            String current = input.get(i);
+            String previous = i > 0 ? input.get(i - 1) : null;
+            String next = i < input.size() - 1 ? input.get(i + 1) : null;
 
             for (int j = 0; j < current.length(); j++) {
                 if (current.charAt(j) == '@') {

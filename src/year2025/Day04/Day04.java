@@ -2,13 +2,13 @@ package year2025.Day04;
 
 import aoc.AocService;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 
 public class Day04 {
     public static void main(String[] args) throws Exception {
-        String session = java.nio.file.Files.readString(
-                java.nio.file.Path.of("src/AocSession")
-        ).trim();
+        String session = Files.readString(Path.of("src/AocSession")).trim();
 
         AocService service = new AocService(session);
 
@@ -21,7 +21,7 @@ public class Day04 {
 
         int p1 = Day04Part1.solve(input);
         System.out.println("Part 1 Answer: " + p1);
-        //service.submit(year, day, 1, String.valueOf(p1));
+        service.submit(year, day, 1, String.valueOf(p1));
 
         int p2 = Day04Part2.solve(input);
         System.out.println("Part 2 Answer: " + p2);

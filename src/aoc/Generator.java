@@ -67,12 +67,13 @@ public class Generator {
                 package year%1$d.Day%2$02d;
 
                 import aoc.AocService;
+                
+                import java.nio.file.Files;
+                import java.nio.file.Path;
 
                 public class Day%2$02d {
                     public static void main(String[] args) throws Exception {
-                        String session = java.nio.file.Files.readString(
-                                java.nio.file.Path.of("src/AocSession")
-                        ).trim();
+                        String session = Files.readString(Path.of("src/AocSession")).trim();
 
                         AocService service = new AocService(session);
 

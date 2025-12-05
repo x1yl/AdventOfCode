@@ -11,7 +11,7 @@ public class AocService {
 
     private static final long FIVE_MINUTES_MS = 300_000;
 
-    public AocService(String session) {
+    public AocService(String session) throws Exception {
         this.client = new AocClient(session);
         this.storage = new AocStorage();
         this.tracker = new AocAnswerTracker(storage);
