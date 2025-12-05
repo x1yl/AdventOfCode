@@ -2,15 +2,10 @@ package aoc;
 
 import java.util.*;
 
-public class AocAnswerTracker {
+public record AocAnswerTracker(AocStorage storage) {
 
-    private final AocStorage storage;
-
-    public AocAnswerTracker(AocStorage s) {
-        this.storage = s;
+    public record Bounds(OptionalInt min, OptionalInt max) {
     }
-
-    public record Bounds(OptionalInt min, OptionalInt max) {}
 
     public Bounds bounds(int year, int day, int part) throws Exception {
         var d = storage.loadDay(year, day);
@@ -18,7 +13,10 @@ public class AocAnswerTracker {
 
         List<Integer> nums = new ArrayList<>();
         for (String s : list) {
-            try { nums.add(Integer.parseInt(s)); } catch (Exception ignore) {}
+            try {
+                nums.add(Integer.parseInt(s));
+            } catch (Exception ignore) {
+            }
         }
 
         if (nums.isEmpty()) {
